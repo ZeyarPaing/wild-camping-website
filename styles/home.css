@@ -84,9 +84,8 @@ section.landing picture img {
 }
 
 .search-container {
-  background: url("https://img.freepik.com/free-vector/topographic-contour-lines-map-seamless-pattern_1284-52862.jpg?w=1380&t=st=1680347616~exp=1680348216~hmac=1090ad60b2b0fceb8ba2de9e9d8e4973143795a4f5e74251516dd4e0f84989cd");
-  background-color: #091a32;
-  background-blend-mode: multiply;
+  background: url("https://img.freepik.com/free-vector/blue-topographic-map-wallpaper_23-2148583301.jpg?w=1380&t=st=1680352132~exp=1680352732~hmac=9def96f24f2c0fd7f7097d0fa66667ba3f4cb39a4cf3f2768971698f30880ee3"), linear-gradient(339deg, rgba(22, 15, 44, 0.8) 0%, rgba(25, 42, 82, 0.8) 100%);
+  background-blend-mode: hard-light;
   text-align: center;
 }
 .search-container .search-input {
@@ -106,7 +105,7 @@ section.landing picture img {
 }
 .search-container .search-input button {
   position: absolute;
-  right: 0;
+  right: -1px;
   border-radius: 0 5rem 5rem 0;
   background-color: var(--theme-color);
   color: var(--white);
@@ -118,4 +117,44 @@ section.landing picture img {
 .search-container .search-input button svg {
   width: 2.5rem;
   height: 2.5rem;
+}
+
+.site-listing {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: space-between;
+}
+.site-listing .card {
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  border-radius: 2rem;
+  max-height: 400px;
+  text-align: left;
+  position: relative;
+}
+.site-listing .card picture {
+  z-index: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.site-listing .card picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  transition: transform 0.4s ease-out;
+}
+.site-listing .card picture:hover img {
+  transform: scale(1.1);
+}
+.site-listing .card .content {
+  position: absolute;
+  padding: 2rem 2.5rem;
+  width: 100%;
+  z-index: 1;
+  bottom: 0;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 100%);
 }/*# sourceMappingURL=home.css.map */
