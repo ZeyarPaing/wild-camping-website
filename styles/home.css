@@ -1,6 +1,7 @@
 section.landing {
   height: 100dvh;
   font-size: 2rem;
+  position: relative;
 }
 section.landing picture img {
   width: 100%;
@@ -12,23 +13,65 @@ section.landing picture img {
 .heading-wrapper {
   position: absolute;
   width: 100%;
-  height: 100%;
+  height: 94%;
   display: flex;
   align-items: center;
 }
-.heading-wrapper div {
+.heading-wrapper > div {
   width: 100%;
   padding: 0 2rem;
 }
-.heading-wrapper div h1,
-.heading-wrapper div p {
+.heading-wrapper > div h1,
+.heading-wrapper > div p {
   max-width: 550px;
 }
-.heading-wrapper div h1 {
+.heading-wrapper > div h1 {
   font-size: 6rem;
   margin-bottom: 2rem;
 }
-.heading-wrapper div p {
+.heading-wrapper > div p {
   font-size: 2.5rem;
   font-weight: 300;
+}
+
+.pitches {
+  position: absolute;
+  bottom: 0;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5vw;
+  width: 100%;
+  padding: 0 2vw 2vw;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.pitches > * {
+  border: 1px solid #1a365e;
+}
+.pitches > a {
+  display: block;
+  padding: 1rem 1.5rem;
+  border-radius: 1rem;
+  background-color: rgba(0, 0, 0, 0.2);
+  -webkit-backdrop-filter: blur(20px) saturate(160%) brightness(220%);
+          backdrop-filter: blur(20px) saturate(160%) brightness(220%);
+}
+.pitches > a:hover {
+  background-color: rgba(70, 70, 70, 0.2);
+  -webkit-backdrop-filter: blur(20px) saturate(280%) brightness(280%);
+          backdrop-filter: blur(20px) saturate(280%) brightness(280%);
+}
+.pitches > a h2 {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.pitches > a p {
+  font-size: 1.7rem;
+  font-weight: 200;
+}
+@media screen and (max-width: 768px) {
+  .pitches > a p {
+    display: none;
+  }
 }/*# sourceMappingURL=home.css.map */

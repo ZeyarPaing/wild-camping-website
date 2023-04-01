@@ -12,7 +12,7 @@
     />
     <link
       preload
-      href="https://api.fontshare.com/v2/css?f[]=general-sans@200,300,400&display=swap"
+      href="https://api.fontshare.com/v2/css?f[]=200,300,400&display=swap"
       rel="stylesheet"
     />
     <link preload rel="stylesheet" href="styles/index.css" />
@@ -43,18 +43,81 @@
 
     <main>
       <section class="landing">
-        <div class="heading-wrapper" role="heading" aria-level="1">
+        <div class="heading-wrapper">
           <div class="container">
-            <h1>Global Wild Swimming and Camping</h1>
-            <p>Explore the untouched nature together!</p>
+            <div role="heading" aria-level="1">
+              <h1>Global Wild Swimming and Camping</h1>
+              <p>Explore the untouched nature together!</p>
+            </div>
           </div>
         </div>
         <picture>
           <img
-            alt="A picture of a baseball field"
+            alt="A night view of a tent in the forest and sky full of stars "
             src="https://images.unsplash.com/photo-1513781419235-2988ecacab83?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2800&q=80"
           />
+          <!-- <img
+            alt="A man Swimming in a lake"
+            src="https://images.unsplash.com/photo-1438029071396-1e831a7fa6d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2900&q=80"
+          /> -->
         </picture>
+        <div class="pitches">
+          <a href="#">
+            <h2>Tent</h2>
+            <p>Find the tent pitch for your next adventure</p>
+          </a>
+          <a href="#">
+            <h2>Touring Caravan</h2>
+            <p>Share your pitch with the world</p>
+          </a>
+          <a href="#">
+            <h2>Motorhome</h2>
+            <p>Share your pitch with the world</p>
+          </a>
+          <a href="#">
+            <h2>Treehouses</h2>
+            <p>Share your pitch with the world</p>
+          </a>
+        </div>
+      </section>
+
+      <section class="search">
+        <div class="container">
+          <h2>Find your next adventure</h2>
+          <div class="search-wrapper">
+            <div class="search-input">
+              <input type="text" placeholder="Search for a pitch" />
+              <button>Search</button>
+            </div>
+            <div class="search-filter">
+              <div class="filter">
+                <label for="country">Country</label>
+                <select name="country" id="country">
+                  <option value="Denmark">Denmark</option>
+                  <option value="Sweden">Sweden</option>
+                  <option value="Norway">Norway</option>
+                  <option value="Finland">Finland</option>
+                </select>
+              </div>
+              <div class="filter">
+                <label for="type">Type</label>
+                <select name="type" id="type">
+                  <option value="Tent">Tent</option>
+                  <option value="Touring Caravan">Touring Caravan</option>
+                  <option value="Motorhome">Motorhome</option>
+                  <option value="Treehouses">Treehouses</option>
+                </select>
+              </div>
+              <div class="filter">
+                <label for="price">Price</label>
+                <select name="price" id="price">
+                  <option value="Free">Free</option>
+                  <option value="Paid">Paid</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
       </section>
     </main>
 
