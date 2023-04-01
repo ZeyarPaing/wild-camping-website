@@ -1,5 +1,5 @@
 :root {
-  --theme-color: #000;
+  --theme-color: #272d78;
   --white: #fff;
   --accent-color: #91b2ff;
   --theme-bg: #01102d;
@@ -19,6 +19,11 @@
   border: none;
 }
 
+*:focus-visible {
+  outline: 3px dashed var(--accent-color);
+  outline-offset: 2px;
+}
+
 h1,
 h2,
 h3,
@@ -29,9 +34,18 @@ h6 {
   letter-spacing: 0.06ch;
 }
 
+h2 {
+  font-size: 3.6rem;
+}
+
 a {
   color: inherit;
   text-decoration: none;
+}
+
+.contain-y {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .container {

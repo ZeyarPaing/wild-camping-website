@@ -45,20 +45,27 @@ section.landing {
   bottom: 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 1.5vw;
+  gap: 1.5rem;
   width: 100%;
-  padding: 0 2vw 2vw;
-  justify-content: center;
-  flex-wrap: wrap;
+  padding: 0 2rem 2rem;
 
-  & > * {
-    border: 1px solid #1a365e;
+  & > p {
+    position: absolute;
+    top: -3.5rem;
+    width: 100%;
+    font-family: var(--primary-font);
+    color: var(--accent-color);
+    text-align: center;
+    font-weight: 200;
+    font-size: 1.8rem;
   }
 
   & > a {
+    border: 1px solid #1a365e;
     display: block;
-    padding: 1rem 1.5rem;
-    border-radius: 1rem;
+    padding: 1.5rem 1.8rem;
+    border-radius: 5rem;
+    text-align: center;
     background-color: rgba(0, 0, 0, 0.2);
     backdrop-filter: blur(20px) saturate(160%) brightness(220%);
 
@@ -72,12 +79,54 @@ section.landing {
       font-weight: 600;
       margin-bottom: 0.2rem;
     }
+
     p {
       font-size: 1.7rem;
       font-weight: 200;
 
       @media screen and (max-width: 768px) {
         display: none;
+      }
+    }
+  }
+}
+
+.search-container {
+  background: url("https://img.freepik.com/free-vector/topographic-contour-lines-map-seamless-pattern_1284-52862.jpg?w=1380&t=st=1680347616~exp=1680348216~hmac=1090ad60b2b0fceb8ba2de9e9d8e4973143795a4f5e74251516dd4e0f84989cd");
+  background-color: #091a32;
+  background-blend-mode: multiply;
+  text-align: center;
+
+  .search-input {
+    margin: 2rem auto;
+
+    span {
+      position: relative;
+    }
+
+    input {
+      width: 100%;
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem;
+      border-radius: 5rem;
+      font-size: 2rem;
+      font-family: var(--primary-font);
+    }
+    button {
+      position: absolute;
+      right: 0;
+      border-radius: 0 5rem 5rem 0;
+      background-color: var(--theme-color);
+      color: var(--white);
+      padding: 1.45rem 1.5rem;
+      display: inline-grid;
+      place-items: center;
+      cursor: pointer;
+
+      svg {
+        width: 2.5rem;
+        height: 2.5rem;
       }
     }
   }
