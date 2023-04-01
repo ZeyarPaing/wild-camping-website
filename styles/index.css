@@ -67,7 +67,7 @@ header nav {
   justify-content: space-between;
   background-color: transparent;
   color: var(--white);
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 header nav a.logo {
   font-family: var(--primary-font);
@@ -90,4 +90,4 @@ header nav ul img {
   border-radius: 50%;
   width: 8rem;
   height: 8rem;
-} /*# sourceMappingURL=index.css.map */
+}/*# sourceMappingURL=index.css.map */
