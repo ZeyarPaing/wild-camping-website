@@ -3,6 +3,7 @@
   --white: #fff;
   --accent-color: #91b2ff;
   --theme-bg: #01102d;
+  --theme-bg-light: #0d1e41;
   --font-size: 1.6rem;
   --primary-font: "Clash Display", sans-serif;
   --secondary-font: "General Sans", sans-serif;
@@ -50,8 +51,9 @@ a {
 
 .container {
   max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+  margin: auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
 }
 
 html {
@@ -109,4 +111,41 @@ header nav ul img {
   border-radius: 50%;
   width: 8rem;
   height: 8rem;
+}
+
+.active-nav {
+  border-bottom: 2px solid var(--accent-color);
+}
+
+footer section {
+  display: flex;
+  justify-content: space-between;
+}
+footer section div .logo {
+  font-family: var(--primary-font);
+  font-weight: 700;
+  font-size: 2.6rem;
+}
+footer section div p {
+  margin: 1rem 0;
+}
+footer section ul {
+  display: flex;
+  gap: 2.5rem;
+  list-style-type: none;
+}
+footer .follow-us {
+  margin-top: 2rem;
+}
+footer .social-media-icons {
+  display: flex;
+  gap: 2rem;
+}
+footer .social-media-icons a {
+  display: block;
+  max-width: 2rem;
+  height: 2rem;
+}
+footer .copy-right {
+  margin-top: 5rem;
 }/*# sourceMappingURL=index.css.map */

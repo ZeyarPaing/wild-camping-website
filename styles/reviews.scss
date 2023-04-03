@@ -1,0 +1,59 @@
+h1 {
+  font-size: 5rem;
+}
+main {
+  padding-top: 8rem;
+  padding-bottom: 8rem;
+}
+
+.reviews {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.rating {
+  display: inline-flex;
+  flex-direction: row-reverse;
+  font-size: 24px;
+  color: #ddd;
+}
+
+.rating input[type="radio"] {
+  display: none;
+}
+
+.rating label {
+  display: inline-block;
+  padding: 5px;
+  margin: 0;
+  cursor: pointer;
+}
+
+.rating label:hover,
+.rating label:hover ~ label,
+.rating input[type="radio"]:checked ~ label {
+  color: #ffd700;
+}
+
+.review {
+  display: flex;
+  background-color: var(--theme-bg-light);
+  padding: 2rem;
+  border-radius: 2rem;
+  gap: 1.5rem;
+
+  .place {
+    img {
+      border: 4px solid var(--accent-color);
+      width: 10rem;
+      height: 10rem;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+  }
+
+  .author {
+    margin-top: 1rem;
+  }
+}
