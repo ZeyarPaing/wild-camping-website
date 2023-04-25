@@ -38,7 +38,7 @@ $path = $uri['path'];
 $filename = end(explode("/", $path));
 
 
-function get_nav_items($is_nav = false)
+function get_nav_items($is_nav = true)
 {
     global $nav_items;
     global $filename;
@@ -48,7 +48,9 @@ function get_nav_items($is_nav = false)
             ($filename == $key || (strlen($filename) == 0 && $key == "index.php") ? " class='active-nav' " : "") .
             ">$value</a></li>";
     }
+
     if (get_user()) {
+        if (!$is_nav) return;
         foreach ($GLOBALS["nav_items_auth_actions"] as $key => $value) {
             echo "<li><a href='$key' class='" .
                 str_replace(".php", "", $filename) .

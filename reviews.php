@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -8,8 +8,7 @@
   <title>GWSC</title>
   <link preload href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,500,600&display=swap" rel="stylesheet" />
   <link preload href="https://api.fontshare.com/v2/css?f[]=200,300,400&display=swap" rel="stylesheet" />
-  <link preload rel="stylesheet" href="styles/index.css" />
-  <link preload rel="stylesheet" href="styles/reviews.css" />
+  <link preload rel="stylesheet" href="styles.css" />
 </head>
 <?php
 require "utils.php";
@@ -376,7 +375,7 @@ require "utils.php";
       <ul>
         <ul>
           <?php
-          get_nav_items();
+          get_nav_items(false);
           ?>
         </ul>
       </ul>

@@ -1,16 +1,21 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <title>Air</title>
-    <!-- <link href="css.css" rel="stylesheet" type="text/css" /> -->
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login</title>
+    <link preload href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,500,600&display=swap" rel="stylesheet" />
+    <link preload href="https://api.fontshare.com/v2/css?f[]=200,300,400&display=swap" rel="stylesheet" />
+    <link preload rel="stylesheet" href="styles.css" />
 </head>
 
 <?php
 session_start();
 require_once 'db_connection.php';
-$emessage = "";
+require_once "utils.php";
+$emessage = "hello err ";
 
 // Check if the user is already logged in
 if (isset($_SESSION["adminid"]) || isset($_SESSION["customerid"])) {
@@ -60,24 +65,47 @@ if (isset($_POST["login"])) {
 ?>
 
 <body>
-    <div class="menu">
-        <a href="" style="margin-left: 0px;">Home</a>
-        <a href="register.php" style="margin-left: 37px;">Register Here</a>
-        <a href="" style="margin-left: 37px;">Contact Us</a>
-        <a href="" style="margin-left: 37px;">About</a>
-    </div>
-    <div class="holder">
-        <form method="POST">
-            <fieldset>
-                <legend>Log In!</legend>
-                Email <input type="email" name="email" value="" required maxlength="45" title="Enter registered email to log in." autofocus /><br><br>
-                Password <input type="password" name="password" value="" required maxlength="20" title="Enter password to log in." /><br><br>
-                <input type="submit" value="Log In" name="login" style="margin-right: 7px;" />
-                <input type="submit" value="Cancel" name="cancel" formnovalidate />
+    <header>
+        <nav class="container">
+            <a href="index.php" class="logo">GWSC</a>
+            <ul>
+                <?php
+                get_nav_items();
+                ?>
+            </ul>
+        </nav>
+    </header>
 
-            </fieldset>
-        </form>
-    </div>
+    <main>
+        <section class="auth contain-y container">
+            <div>
+                <form class="login" method="POST">
+                    <fieldset>
+                        <legend>
+                            <h1>Login</h1>
+                        </legend>
+                        <small>Please enter your registered email and password to login.</small>
+                        <label>
+                            <p>Email</p>
+                            <input type="email" name="email" required maxlength="45" title="Enter your registered email address" placeholder="example@gmail.com" autofocus />
+                        </label>
+                        <label>
+                            <p>Password</p>
+                            <input type="password" name="password" required maxlength="20" title="Enter your password to log in." placeholder="Password" />
+                        </label>
+                        <button class="btn btn-primary" type="submit" name="login">Login </button>
+                        <span class="error-msg">
+                            <?php
+                            echo $emessage;
+                            ?>
+                        </span>
+                    </fieldset>
+                </form>
+                <p class="to-next-auth">Don't have an account? <a href="register.php">Register</a></p>
+
+            </div>
+        </section>
+    </main>
 </body>
 
 </html>

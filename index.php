@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="dark">
+<html lang="en">
 
 <head>
   <meta charset="UTF-8" />
@@ -8,8 +8,7 @@
   <title>GWSC</title>
   <link preload href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,500,600&display=swap" rel="stylesheet" />
   <link preload href="https://api.fontshare.com/v2/css?f[]=200,300,400&display=swap" rel="stylesheet" />
-  <link preload rel="stylesheet" href="styles/index.css" />
-  <link preload rel="stylesheet" href="styles/home.css" />
+  <link preload rel="stylesheet" href="styles.css" />
 </head>
 <?php
 require "utils.php";
@@ -19,34 +18,11 @@ require "utils.php";
   <header>
     <nav class="container">
       <a href="index.php" class="logo"> GWSC </a>
-
       <ul>
-
         <?php
         get_nav_items();
         ?>
       </ul>
-      <!-- <ul>
-        <li><a href="index.php" class="active-nav">Home</a></li>
-        <li><a href="information.php">Information</a></li>
-        <li><a href="explore.php">Explore</a></li>
-        <li><a href="reviews.php">Reviews</a></li>
-        <!?php
-        if (is_loggined()) {
-          echo '<li><a href="profile.php" role="button">' .  $_SESSION["adminid"] . '</a></li>';
-        } else {
-          echo '
-          <li><a href="login.php" role="button">Login</a></li>
-          <li><a href="register.php" role="button">Register</a></li>
-          ';
-        }
-        $uri = parse_url($_SERVER['REQUEST_URI']);
-
-        $path = $uri['path'];
-        $query = $uri['query'];
-        echo end(explode("/", $path));
-        ?>
-      </ul> -->
     </nav>
   </header>
 

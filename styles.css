@@ -1,7 +1,8 @@
 :root {
   --theme-color: #272d78;
   --white: #fff;
-  --accent-color: #91b2ff;
+  --accent-rgb: 145, 178, 255;
+  --accent-color: rgb(var(--accent-rgb));
   --theme-bg: #01102d;
   --theme-bg-light: #0d1e41;
   --font-size: 1.6rem;
@@ -411,3 +412,66 @@ section.landing picture img {
 .review .author {
   margin-top: 1rem;
 } /*# End review */
+
+/* Start authentication screens */
+.auth {
+  display: grid;
+  height: 100vh;
+  place-items: center;
+}
+
+.auth form {
+  background-color: var(--theme-bg-light);
+  padding: 2rem;
+  border-radius: 2rem;
+  max-width: 400px;
+  width: 100%;
+}
+.auth h1 {
+  font-size: 3rem;
+}
+.auth form small {
+  display: block;
+  margin-bottom: 2rem;
+}
+.auth label p {
+  margin-bottom: 0.3rem;
+}
+.auth input {
+  border-radius: 0.8rem;
+  padding: 1rem 1.5rem;
+  width: 100%;
+  font-size: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.btn {
+  padding: 1rem 2rem;
+  border-radius: 0.8rem;
+  font-size: 1.5rem;
+  font-family: var(--primary-font);
+  width: 100%;
+  cursor: pointer;
+  display: inline-block;
+  transition: opacity 0.1s ease-out;
+}
+.btn:hover {
+  opacity: 0.8;
+}
+.btn:active {
+  opacity: 0.5;
+}
+.btn-primary {
+  border: 1px solid rgba(var(--accent-rgb), 0.4);
+  background-color: var(--theme-color);
+  color: var(--white);
+}
+
+.to-next-auth {
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.to-next-auth a {
+  color: var(--accent-color);
+}
