@@ -67,7 +67,7 @@ if (isset($_POST["login"])) {
         <a href="" style="margin-left: 37px;">About</a>
     </div>
     <div class="holder">
-        <form name="frm" method="POST">
+        <form method="POST">
             <fieldset>
                 <legend>Log In!</legend>
                 Email <input type="email" name="email" value="" required maxlength="45" title="Enter registered email to log in." autofocus /><br><br>
