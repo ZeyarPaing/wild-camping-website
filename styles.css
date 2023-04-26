@@ -3,6 +3,7 @@
   --white: #fff;
   --accent-rgb: 145, 178, 255;
   --accent-color: rgb(var(--accent-rgb));
+  --error-color: #fa7e7e;
   --theme-bg: #01102d;
   --theme-bg-light: #0d1e41;
   --font-size: 1.6rem;
@@ -474,4 +475,10 @@ section.landing picture img {
 
 .to-next-auth a {
   color: var(--accent-color);
+}
+
+.auth form .error {
+  color: var(--error-color);
+  margin-top: 1rem;
+  font-size: 1.3rem;
 }

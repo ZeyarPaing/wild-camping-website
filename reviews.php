@@ -19,11 +19,9 @@ require "utils.php";
     <nav class="container">
       <a href="index.php" class="logo"> GWSC </a>
       <ul>
-        <ul>
-          <?php
-          get_nav_items();
-          ?>
-        </ul>
+        <?php
+        get_nav_items();
+        ?>
       </ul>
     </nav>
   </header>
