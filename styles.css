@@ -9,6 +9,7 @@
   --font-size: 1.6rem;
   --primary-font: "Clash Display", sans-serif;
   --secondary-font: "General Sans", sans-serif;
+  --theme-light: #8de6ff;
 }
 
 *,
@@ -83,31 +84,84 @@ header {
   position: absolute;
   z-index: 10;
   width: 100%;
+  background: linear-gradient(
+    0deg,
+    rgba(1, 10, 29, 0) 0%,
+    rgba(2, 11, 31, 0.248) 50%,
+    rgba(4, 14, 35, 0.8) 100%
+  );
 }
+
 header nav {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background-color: transparent;
   color: var(--white);
   font-size: 1.8rem;
 }
 header nav a.logo {
   font-family: var(--primary-font);
   font-weight: 700;
+  font-size: 3rem;
 }
-header nav ul {
+
+header nav .hamburger {
+  display: none;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  padding: 3rem 0;
+}
+
+.navitems {
   list-style-type: none;
   display: flex;
   gap: 2.5rem;
   padding: 3rem 0;
 }
+
+@media screen and (max-width: 950px) {
+  .navitems {
+    display: none;
+  }
+
+  header nav .hamburger {
+    display: block;
+  }
+
+  header.open {
+    background-color: var(--theme-bg-light);
+  }
+  .navitems.open {
+    position: fixed;
+    top: 10rem;
+    padding: 1rem 4rem;
+    left: 0;
+    background-color: var(--theme-bg-light);
+    width: 100%;
+    display: block !important;
+  }
+  .navitems.open a {
+    display: block;
+  }
+  .navitems.open .nav-logout,
+  .navitems.open .nav-register,
+  .navitems.open .nav-login,
+  .navitems.open .nav-profile {
+    display: block;
+    width: 100%;
+    text-align: center;
+    margin: 1rem 0;
+  }
+}
+
 header nav ul li a {
   line-height: 5rem;
   font-weight: 300;
+  transition: opacity 0.1s ease-in-out;
 }
 header nav ul li a:hover {
-  color: var(--accent-color);
+  opacity: 0.7;
 }
 header nav ul img {
   border-radius: 50%;
@@ -115,8 +169,37 @@ header nav ul img {
   height: 8rem;
 }
 
+nav .nav-logout {
+  background-color: var(--error-color);
+  border: 1px solid var(--error-color);
+  border-radius: 5rem;
+  padding: 0.7rem 1.8rem;
+  color: var(--white);
+  font-weight: 300;
+  font-size: 1.7rem;
+}
+nav .nav-register,
+.nav-profile {
+  background-color: transparent;
+  border: 1px solid var(--theme-light);
+  border-radius: 5rem;
+  padding: 0.7rem 1.8rem;
+  color: var(--theme-light);
+  font-weight: 300;
+  font-size: 1.7rem;
+}
+nav .nav-login {
+  background-color: var(--theme-light);
+  border: 1px solid var(--theme-light);
+  border-radius: 5rem;
+  padding: 0.7rem 1.8rem;
+  color: var(--theme-bg);
+  font-weight: 300;
+  font-size: 1.7rem;
+}
+
 .active-nav {
-  border-bottom: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--theme-light);
 }
 
 footer section {

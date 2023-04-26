@@ -26,8 +26,8 @@ $nav_items = [
 ];
 
 $nav_items_guest_actions = [
-    "login.php" => "Login",
     "register.php" => "Register",
+    "login.php" => "Login",
 ];
 
 $nav_items_auth_actions = [
@@ -56,14 +56,14 @@ function get_nav_items($is_nav = true)
         if (!$is_nav) return $render;
         foreach ($GLOBALS["nav_items_auth_actions"] as $key => $value) {
             $render .= "<li><a href='$key' class='" .
-                str_replace(".php", "", 'nav-' . $filename) .
+                str_replace(".php", "", 'nav-' . $key) .
                 ($filename == $key ? " active-nav'" : "'") .
                 ">$value</a></li>";
         }
     } else {
         foreach ($GLOBALS["nav_items_guest_actions"] as $key => $value) {
             $render .= "<li><a href='$key' class='" .
-                str_replace(".php", "", 'nav-' . $filename) .
+                str_replace(".php", "", 'nav-' . $key) .
                 ($filename == $key ? " active-nav'" : "'") .
                 ">$value</a></li>";
         }
@@ -92,13 +92,30 @@ function renderHeader()
     <header>
         <nav class='container'>
             <a href='index.php' class='logo'> GWSC </a>
-            <ul>"
+            <ul class='navitems'>"
         .
         get_nav_items()
         .
         " </ul>
+        <button class='hamburger'>
+
+        <svg width='36' height='36' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'>
+            <path d='M20 7H4M20 12H4M20 17H4' stroke='white' stroke-width='1.5' stroke-linecap='round'/>
+        </svg>
+
+        </button>
         </nav>
     </header>
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navitem = document.querySelector('.navitems');
+        const header = document.querySelector('header');
+
+        hamburger.addEventListener('click', () => {
+            navitem.classList.toggle('open');
+            header.classList.toggle('open');
+        });
+    </script>
     ";
 }
 
