@@ -21,6 +21,8 @@ $nav_items = [
     "explore.php" => "Explore",
     "reviews.php" => "Reviews",
     "information.php" => "Information",
+    "facilities.php" => "Facilities",
+    "contact-us.php" => "Contact Us",
 ];
 
 $nav_items_guest_actions = [
@@ -54,14 +56,14 @@ function get_nav_items($is_nav = true)
         if (!$is_nav) return $render;
         foreach ($GLOBALS["nav_items_auth_actions"] as $key => $value) {
             $render .= "<li><a href='$key' class='" .
-                str_replace(".php", "", $filename) .
+                str_replace(".php", "", 'nav-' . $filename) .
                 ($filename == $key ? " active-nav'" : "'") .
                 ">$value</a></li>";
         }
     } else {
         foreach ($GLOBALS["nav_items_guest_actions"] as $key => $value) {
             $render .= "<li><a href='$key' class='" .
-                str_replace(".php", "", $filename) .
+                str_replace(".php", "", 'nav-' . $filename) .
                 ($filename == $key ? " active-nav'" : "'") .
                 ">$value</a></li>";
         }

@@ -79,7 +79,7 @@ if (isset($_POST["login"])) {
         }
     } else {
         mysqli_stmt_close($statement);
-        $statement = mysqli_prepare($connection, "SELECT customerid, customername, password FROM customer WHERE email = ?");
+        $statement = mysqli_prepare($connection, "SELECT userid, username, password FROM user WHERE email = ?");
         mysqli_stmt_bind_param($statement, "s", $memail);
         mysqli_stmt_execute($statement);
         mysqli_stmt_bind_result($statement, $id, $cname, $pwd);
