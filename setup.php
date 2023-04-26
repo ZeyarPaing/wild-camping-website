@@ -37,7 +37,7 @@ $query .= "CREATE TABLE IF NOT EXISTS user(
 $query .= "CREATE TABLE IF NOT EXISTS pitch (
     pitchid INT(5) AUTO_INCREMENT PRIMARY KEY,
     pitchname VARCHAR(200) NOT NULL,
-    availability INT(1) NOT NULL DEFAULT 1,
+    availability INT(1) NOT NULL,
     description TEXT
   );";
 
@@ -57,17 +57,15 @@ $query .= "CREATE TABLE IF NOT EXISTS local_attraction (
     description TEXT
   );";
 
-
-
 $query .= "CREATE TABLE IF NOT EXISTS camping_site (
     campsiteid INT(5) AUTO_INCREMENT PRIMARY KEY,
     sitename VARCHAR(200) NOT NULL,
     location VARCHAR(200) NOT NULL,
     description TEXT NOT NULL,
-    pitchid INT(5),
+    pitchid INT(5) NOT NULL,
     price VARCHAR(50) NOT NULL,
     rating DECIMAL(3, 1) NOT NULL,
-    maplink TEXT NOT NULL
+    maplink TEXT NOT NULL,
     FOREIGN KEY (pitchid) REFERENCES pitch(pitchid)
   );";
 
@@ -119,17 +117,16 @@ $query .= "INSERT INTO user (username, email, password, dateofbirth, gender, add
 $query .= "INSERT INTO pitch ( pitchname, availability, description) VALUES 
 ('Tent', 1, 'A tent is a shelter consisting of sheets of fabric or other material draped over, attached to a frame of poles or attached to a supporting rope. While smaller tents may be free-standing or attached to the ground, large tents are usually anchored using guy ropes tied to stakes or tent pegs.'),
 ('Caravan', 1, 'A caravan, travel trailer, camper or camper trailer is towed behind a road vehicle to provide a place to sleep which is more comfortable and protected than a tent (although there are fold-down trailer tents). It provides the means for people to have their own home on a journey or a vacation, without relying on a motel or hotel, and enables them to stay in places where none is available.'),
-('Motorhome', 1, 'A motorhome (or motor coach) is a type of self-propelled recreational vehicle (RV) which offers living accommodation combined with a vehicle engine. Motorhomes are part of the much larger associated group of mobile homes which includes caravans, also known as tourers, and static caravans. The overarching 'mobile leisure' terminology encompasses all aspects of the industry from caravan parks, sales dealerships, manufacturers, holiday parks through to the vast supporting services to the sector.'),
-('Cabin', 0, 'A cabin or berthing is an enclosed space generally on a ship or an aircraft. A cabin which protrudes above the level of a ship's deck may be referred to as a deckhouse.');
-     ;";
+('Motorhome', 1, 'A motorhome (or motor coach) is a type of self-propelled recreational vehicle (RV) which offers living accommodation combined with a vehicle engine. Motorhomes are part of the much larger associated group of mobile homes which includes caravans, also known as tourers, and static caravans. The overarching mobile leisure terminology encompasses all aspects of the industry from caravan parks, sales dealerships, manufacturers, holiday parks through to the vast supporting services to the sector.'),
+('Cabin', 0, 'A cabin or berthing is an enclosed space generally on a ship or an aircraft. A cabin which protrudes above the level of a ships deck may be referred to as a deckhouse.');";
 // feature
 $query .= "INSERT INTO feature ( featurename, description) VALUES 
-('Electricity', 'Electricity is the set of physical phenomena associated with the presence and motion of matter that has a property of electric charge. In early days, electricity was considered as being unrelated to magnetism. Later on, many experimental results and the development of Maxwell's equations indicated that both electricity and magnetism are from a single phenomenon: electromagnetism.'),
-('Water', 'Water is an inorganic, transparent, tasteless, odorless, and nearly colorless chemical substance, which is the main constituent of Earths hydrosphere and the fluids of most living organisms. It is vital for all known forms of life, even though it provides no calories or organic nutrients. Its chemical formula is H2O, meaning that each of its molecules contains one oxygen and two hydrogen atoms, connected by covalent bonds.'),
-('Toilet', 'A toilet is a piece of hardware used for the collection or disposal of human urine and feces. In other words: Toilets are sanitation facilities at the user interface that allow the safe and convenient urination and defecation.'),
-('Shower', 'A shower is a place in which a person bathes under a spray of typically warm or hot water. Indoors, there is a drain in the floor. Most showers have temperature, spray pressure and adjustable showerhead nozzle. The simplest showers have a swivelling nozzle aiming down on the user, while more complex showers have a showerhead connected to a hose that has a mounting bracket.'),
-('Laundry', 'Laundry refers to the washing of clothing and other textiles. Laundry processes are often done in a room reserved for that purpose; in an individual home this is referred to as a laundry room, Laundry in Australian English or utility room. An apartment building or student hall of residence may have a shared laundry facility such as a tvättstuga. A stand-alone business is referred to as a self-service laundry (launderette in British English or laundromat in American English).'),
-('Wifi', 'Wi-Fi is a family of wireless networking technologies, based on the IEEE 802.11 family of standards, which are commonly used for local area networking of devices and Internet access. Wi-Fi is a trademark of the non-profit Wi-Fi Alliance, which restricts the use of the term Wi-Fi Certified to products that successfully complete interoperability certification testing.')
+('Electricity', 'Whether you need to charge your phone, run a fan, or power a hotplate, electricity at your campsite can provide a level of convenience and comfort that can make your stay more enjoyable.'),
+('Water', 'Water sources may be provided through taps, wells, or nearby rivers or streams, and having this feature available on every campsite can save you the hassle of having to bring your own water supply or travel long distances to find water.'),
+('Toilet', 'Having a toilet on site can make camping much more comfortable and convenient, especially for longer stays or for families with young children. It can also help reduce the impact of human waste on the surrounding environment.'),
+('Laundry', 'Laundry facilities may include coin-operated washing machines and dryers or basic washing basins and clotheslines for air-drying. Having access to laundry facilities can also help reduce the amount of clothing campers need to bring with them, making packing and traveling easier.'),
+('Shower', 'Having access to a shower can make a huge difference in the overall camping experience, allowing campers to feel refreshed and rejuvenated after a long day of hiking, swimming, or other outdoor activities.'),
+('Wifi', 'Stay connected during your outdoor adventure with our campsite complimentary wifi. Check your email, catch up on work, or share your favorite moments on social media, all from the comfort of your campsite.')
 ;";
 //local_attraction
 $query .= "INSERT INTO local_attraction ( localname, location, description) VALUES 
