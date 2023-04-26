@@ -1,5 +1,13 @@
 <?php
 require "utils.php";
+require_once "db_connection.php";
+//fetch pitch data
+$pitches = $connection->query("SELECT * FROM pitch");
+//fetch campsites
+$campsites = $connection->query("SELECT * FROM camping_site cs 
+INNER JOIN pitch p ON p.pitchid = cs.pitchid
+LIMIT 6");
+
 ?>
 
 <!DOCTYPE html>
@@ -42,57 +50,45 @@ metaHead();
       <small class="counter"> 14332 people visited </small>
     </section>
 
-    <div class="pitches">
-      <p>Quickly explore popular pitches</p>
-      <a href="#">
-        <h2>Tent</h2>
-        <p>Find the tent pitch for your next adventure</p>
-      </a>
-      <a href="#">
-        <h2>Touring Caravan</h2>
-        <p>Share your pitch with the world</p>
-      </a>
-      <a href="#">
-        <h2>Motorhome</h2>
-        <p>Share your pitch with the world</p>
-      </a>
-      <a href="#">
-        <h2>Treehouses</h2>
-        <p>Share your pitch with the world</p>
-      </a>
+    <div class="pitch-container">
+      <h2>Quickly explore popular pitches</h2>
+      <div class="pitches">
+        <?php
+        while ($pitch = $pitches->fetch_assoc()) {
+          echo "
+            <a class='pitch' href='explore.php?pitch=" . $pitch['pitchname'] . "'>
+            <h2>{$pitch['pitchname']}</h2>
+            <picture>
+              <img src='images/pitches/" . $pitch['pitchid'] . ".jpg' alt='" . $pitch['pitchname'] . "' />
+              </picture>
+            </a>
+            ";
+        }
+        ?>
+      </div>
     </div>
 
     <section class="campsites contain-y">
       <div class="container">
         <h2>Popular campsites</h2>
         <div class="site-listing">
-          <a href="#" class="card">
-            <picture>
-              <img src="https://images.unsplash.com/photo-1504851149312-7a075b496cc7?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=810&q=80" alt="Campsite 1" />
-            </picture>
-            <div class="content">
-              <h2>Campsite 1</h2>
-              <small>Location: Campsite 1, California</small>
-            </div>
-          </a>
-          <a href="#" class="card">
-            <picture>
-              <img src="https://images.unsplash.com/photo-1470748085385-5fbb3018c796?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1724&q=80" alt="Campsite 2" />
-            </picture>
-            <div class="content">
-              <h2>Campsite 2</h2>
-              <small>Location: Campsite 2, Colorado</small>
-            </div>
-          </a>
-          <a href="#" class="card">
-            <picture>
-              <img src="https://images.unsplash.com/photo-1576176539998-0237d1ac6a85?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=774&q=80" alt="Campsite 3" />
-            </picture>
-            <div class="content">
-              <h2>Campsite 3</h2>
-              <small> Location: Campsite 3, Oregon </small>
-            </div>
-          </a>
+          <?php
+          while ($campsite = $campsites->fetch_assoc()) {
+            echo "
+            <a href='campsite.php?id=" . $campsite['id'] . "' class='card'>
+              <picture>
+                <img src='images/campsites/" . $campsite['campsiteid'] . ".jpg' alt='" . $campsite['sitename'] . "' />
+              </picture>
+              <div class='content'>
+                <h3>" . $campsite['sitename'] . "</h3>
+                <small class='pitch-label'>" . $campsite['pitchname'] . "</small>
+                <small>" . $campsite['location'] . "</small></br>
+                <small>" . $campsite['price'] . "</small></br>
+                <small> Rating: " . $campsite['rating'] . "</small>
+              </div>
+              </a>";
+          }
+          ?>
         </div>
       </div>
     </section>

@@ -1,18 +1,27 @@
 <?php
 require "utils.php";
 require "db_connection.php";
+$pitches = $connection->query("SELECT * FROM pitch");
 
-if (isset($_GET['search'])) {
-  $search = $_GET['search'];
-  $query = "SELECT * FROM camping_site WHERE sitename LIKE '%$search%' OR location LIKE '%$search%';";
-  if (isset($_GET['pitch'])) {
-    $pitch = $_GET['pitch'];
-    $query = "SELECT * FROM camping_site WHERE pitch = '$pitch' AND (sitename LIKE '%$search%' OR location LIKE '%$search%');";
-  }
-  $campsites = $connection->query($query);
+$search = $_GET['search'];
+$pitch = $_GET['pitch'];
+$query = "";
+if (!empty($search) && !empty($pitch)) {
+  $query = "SELECT * FROM camping_site cs
+  INNER JOIN pitch p ON p.pitchid = cs.pitchid
+  WHERE p.pitchname = '$pitch' AND (cs.sitename LIKE '%$search%' OR location LIKE '%$search%');";
+} else if (!empty($pitch) && empty($search)) {
+  $query = "SELECT * FROM camping_site cs
+  INNER JOIN pitch p ON p.pitchid = cs.pitchid
+  WHERE p.pitchname = '$pitch';";
+} else if (empty($pitch) && !empty($search)) {
+  $query = "SELECT * FROM camping_site cs
+  INNER JOIN pitch p ON p.pitchid = cs.pitchid
+  WHERE cs.sitename LIKE '%$search%' OR location LIKE '%$search%';";
 } else {
-  $campsites = $connection->query("SELECT * FROM camping_site;");
+  $query = "SELECT * FROM camping_site cs INNER JOIN pitch p ON p.pitchid = cs.pitchid;";
 }
+$campsites = $connection->query($query);
 
 ?>
 
@@ -33,12 +42,20 @@ metaHead("Explore", "Explore campsites");
       <div class="search-input">
         <form method="GET">
           <div class="pitch-type-select">
-            <select name="" onchange="search()">
-              <option selected disabled value="all">Pitch type</option>
-              <option value="tent">Tent</option>
-              <option value="caravan">Touring Caravan</option>
-              <option value="motorhome">Motorhome</option>
-              <option value="treehouse">Treehouses</option>
+            <select name="pitch">
+              <option disabled>Pitch type</option>
+              <option value="">All</option>
+              <?php
+              while ($pitch = $pitches->fetch_assoc()) {
+                // echo "<option value='{$pitch['pitchname']}'>{$pitch['pitchname']}</option>";
+                //selected from get 
+                if (isset($_GET['pitch']) && $_GET['pitch'] == $pitch['pitchname']) {
+                  echo "<option value='{$pitch['pitchname']}' selected>{$pitch['pitchname']}</option>";
+                } else {
+                  echo "<option value='{$pitch['pitchname']}'>{$pitch['pitchname']}</option>";
+                }
+              }
+              ?>
             </select>
           </div>
           <input type="text" name="search" value="<?php echo $_GET['search']; ?>" placeholder="Search for a pitch" />
@@ -50,6 +67,7 @@ metaHead("Explore", "Explore campsites");
         </form>
       </div>
     </div>
+
 
     <section class="campsites contain-y">
       <div class="container">
@@ -69,7 +87,10 @@ metaHead("Explore", "Explore campsites");
               </picture>
               <div class='content'>
                 <h3>" . $campsite['sitename'] . "</h3>
-                <small>Location: " . $campsite['location'] . "</small>
+                <small class='pitch-label'>" . $campsite['pitchname'] . "</small>
+                <small>" . $campsite['location'] . "</small></br>
+                <small>" . $campsite['price'] . "</small></br>
+                <small> Rating: " . $campsite['rating'] . "</small>
               </div>
               </a>";
           }
