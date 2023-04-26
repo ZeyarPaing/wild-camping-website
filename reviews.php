@@ -2,7 +2,7 @@
 require "utils.php";
 require "db_connection.php";
 
-$reviews = $connection->query("SELECT r.review, r.rating, u.username, u.userid, cs.sitename, cs.location
+$reviews = $connection->query("SELECT r.review, r.rating, u.username, u.userid, cs.campsiteid, cs.sitename, cs.location
 FROM review r 
 INNER JOIN user u ON r.userid = u.userid
 INNER JOIN camping_site cs ON r.campsiteid = cs.campsiteid
@@ -28,6 +28,10 @@ metaHead("Reviews", "Reviews of campsites");
         while ($review = $reviews->fetch_assoc()) {
           echo "
           <div class='review'>
+          <div class='site'>
+            <img src='images/campsites/{$review['campsiteid']}.jpg' alt='campsite photo ' />
+            </div>
+            <div class='overlay'></div>
           <div class='place'>
             <img src='images/users/{$review['userid']}.jpg' alt='user photo ' />
           </div>
