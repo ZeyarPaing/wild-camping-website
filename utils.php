@@ -3,9 +3,9 @@ session_start();
 function get_user()
 {
     if (isset($_SESSION["adminid"])) {
-        return "admin";
-    } else if (isset($_SESSION["customerid"])) {
-        return "customer";
+        return ["id" => $_SESSION["adminid"], "role" => "admin"];
+    } else if (isset($_SESSION["userid"])) {
+        return ["id" => $_SESSION["userid"], "role" => "user"];
     } else {
         return null;
     }

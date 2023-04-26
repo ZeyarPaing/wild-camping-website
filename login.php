@@ -84,10 +84,10 @@ if (isset($_POST["login"])) {
         mysqli_stmt_execute($statement);
         mysqli_stmt_bind_result($statement, $id, $cname, $pwd);
         if (mysqli_stmt_fetch($statement) && password_verify($mpassword, $pwd)) {
-            $_SESSION["customerid"] = $id;
-            $_SESSION["customername"] = $cname;
+            $_SESSION["userid"] = $id;
+            $_SESSION["username"] = $cname;
             $err_msg = "";
-            header("Location: information.php");
+            header("Location: index.php");
         } else {
             logIncorrectLogin();
         }
