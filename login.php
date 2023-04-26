@@ -1,16 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login</title>
-    <link preload href="https://api.fontshare.com/v2/css?f[]=clash-display@200,400,500,600&display=swap" rel="stylesheet" />
-    <link preload href="https://api.fontshare.com/v2/css?f[]=200,300,400&display=swap" rel="stylesheet" />
-    <link preload rel="stylesheet" href="styles.css" />
-</head>
-
 <?php
 session_start();
 require_once 'db_connection.php';
@@ -108,18 +95,17 @@ if (isset($_POST["login"])) {
 }
 ?>
 
-<body>
-    <header>
-        <nav class="container">
-            <a href="index.php" class="logo">GWSC</a>
-            <ul>
-                <?php
-                get_nav_items();
-                ?>
-            </ul>
-        </nav>
-    </header>
+<!DOCTYPE html>
+<html lang="en">
 
+<?php
+metaHead("Login", "Login to your account");
+?>
+
+<body>
+    <?php
+    renderHeader();
+    ?>
     <main>
         <section class="auth contain-y container">
             <div>
