@@ -29,7 +29,7 @@ metaHead("Reviews", "Reviews of campsites");
           echo "
           <div class='review'>
           <div class='place'>
-            <img src='assets/images/users/{$review['userid']}.jpg' alt='user photo ' />
+            <img src='images/users/{$review['userid']}.jpg' alt='user photo ' />
           </div>
           <div>
             <h3>{$review['username']}</h3>

@@ -237,7 +237,7 @@ footer .social-media-icons a {
 }
 footer .copy-right {
   margin-top: 5rem;
-} /*# sourceMappingURL=index.css.map */
+} /*# Footer */
 
 /* Home page */
 section.landing {
@@ -277,8 +277,8 @@ section.landing picture img {
 }
 
 .pitches {
-  position: absolute;
-  bottom: 0;
+  /* position: absolute; */
+  /* bottom: 0; */
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
@@ -286,8 +286,8 @@ section.landing picture img {
   padding: 0 2rem 2rem;
 }
 .pitches > p {
-  position: absolute;
-  top: -3.5rem;
+  /* position: absolute; */
+  /* top: -3.5rem; */
   width: 100%;
   font-family: var(--primary-font);
   color: var(--accent-color);
@@ -325,22 +325,21 @@ section.landing picture img {
   }
 }
 
-.search-container {
-  background: url("https://img.freepik.com/free-vector/blue-topographic-map-wallpaper_23-2148583301.jpg?w=1380&t=st=1680352132~exp=1680352732~hmac=9def96f24f2c0fd7f7097d0fa66667ba3f4cb39a4cf3f2768971698f30880ee3"),
-    linear-gradient(339deg, rgb(22, 15, 44) 0%, rgb(25, 42, 82) 100%);
-  background-blend-mode: hard-light;
-  text-align: center;
-  padding: 20rem 2rem;
+.counter {
+  position: absolute;
+  bottom: 2rem;
+  right: 2rem;
 }
 .search-container .search-input {
   margin: 2rem auto;
 }
-.search-container .search-input span {
+.search-container .search-input form {
+  display: inline;
   position: relative;
 }
 .search-container .search-input input {
   width: 100%;
-  max-width: 600px;
+  max-width: 400px;
   margin: 0 auto;
   padding: 1.5rem 2rem;
   border-radius: 5rem;
@@ -382,7 +381,7 @@ section.landing picture img {
 
 .site-listing {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(50vw, 300px), 1fr));
   flex-wrap: wrap;
   gap: 1.5rem;
   justify-content: space-between;
@@ -495,6 +494,35 @@ section.landing picture img {
   margin-top: 1rem;
 } /*# End review */
 
+/*# Start explore page */
+.explore-search {
+  display: grid;
+  gap: 3rem;
+  padding-top: 16rem;
+  place-items: center;
+}
+.explore-search input {
+  max-width: 1000px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  border-radius: 5rem;
+  font-size: 1.6rem;
+  font-family: var(--primary-font);
+}
+.explore-search form {
+  display: flex;
+  gap: 1rem;
+}
+.explore-search button.btn {
+  display: block;
+  flex-shrink: 0.5;
+  border-radius: 50%;
+  width: 6rem;
+  height: 5rem;
+  padding: 1rem;
+}
+
 /* Start authentication screens */
 .auth {
   display: grid;
@@ -563,4 +591,16 @@ section.landing picture img {
   color: var(--error-color);
   margin-top: 1rem;
   font-size: 1.3rem;
+}
+
+.privacy p {
+  white-space: pre-line;
+}
+.privicy-link {
+  margin-top: 2rem;
+  line-height: 1.4;
+}
+.privicy-link a {
+  color: var(--accent-color);
+  text-decoration: underline;
 }

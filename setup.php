@@ -34,6 +34,23 @@ $query .= "CREATE TABLE IF NOT EXISTS user(
     phoneno VARCHAR(30) NOT NULL
     );";
 
+$query .= "CREATE TABLE IF NOT EXISTS pitch (
+    pitchid INT(5) AUTO_INCREMENT PRIMARY KEY,
+    pitchname VARCHAR(200) NOT NULL,
+    availability INT(1) NOT NULL DEFAULT 1,
+    description TEXT,
+  );";
+
+$query .= "CREATE TABLE IF NOT EXISTS feature (
+    featureid INT(5) AUTO_INCREMENT PRIMARY KEY,
+    featurename VARCHAR(200) NOT NULL,
+    location VARCHAR(200) NOT NULL,
+    description TEXT NOT NULL,
+    price VARCHAR(50) NOT NULL,
+    rating DECIMAL(3, 1) NOT NULL,
+    maplink TEXT NOT NULL
+  );";
+
 $query .= "CREATE TABLE IF NOT EXISTS camping_site (
     campsiteid INT(5) AUTO_INCREMENT PRIMARY KEY,
     sitename VARCHAR(200) NOT NULL,

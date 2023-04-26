@@ -21,47 +21,45 @@ metaHead();
             <h1>Global Wild Swimming and Camping</h1>
             <p>Explore the untouched nature together!</p>
           </div>
+          <div class="search-container">
+            <div class="search-input">
+              <form method="get" action="explore.php">
+                <input name="search" type="text" placeholder="Search" />
+                <button type="submit">
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
+                  </svg>
+                </button>
+              </form>
+            </div>
+          </div>
         </div>
       </div>
       <picture>
-        <img alt="A night view of a tent in the forest and sky full of stars " src="https://images.unsplash.com/photo-1513781419235-2988ecacab83?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2800&q=80" />
-        <!-- <img
-            alt="A man Swimming in a lake"
-            src="https://images.unsplash.com/photo-1438029071396-1e831a7fa6d8?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2900&q=80"
-          /> -->
+        <img alt="A night view of a tent in the forest and sky full of stars " src="images/website/home-bg-1.jpg" />
+        <!-- <img alt="A man Swimming in a lake" src="images/website/home-bg-2.jpg" /> -->
       </picture>
-      <div class="pitches">
-        <p>Quickly explore popular pitches</p>
-        <a href="#">
-          <h2>Tent</h2>
-          <p>Find the tent pitch for your next adventure</p>
-        </a>
-        <a href="#">
-          <h2>Touring Caravan</h2>
-          <p>Share your pitch with the world</p>
-        </a>
-        <a href="#">
-          <h2>Motorhome</h2>
-          <p>Share your pitch with the world</p>
-        </a>
-        <a href="#">
-          <h2>Treehouses</h2>
-          <p>Share your pitch with the world</p>
-        </a>
-      </div>
+      <small class="counter"> 14332 people visited </small>
     </section>
-    <div class="search-container">
-      <h2>Find your next adventure</h2>
-      <div class="search-input">
-        <span>
-          <input type="text" placeholder="Search for a pitch" />
-          <button>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-              <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-            </svg>
-          </button>
-        </span>
-      </div>
+
+    <div class="pitches">
+      <p>Quickly explore popular pitches</p>
+      <a href="#">
+        <h2>Tent</h2>
+        <p>Find the tent pitch for your next adventure</p>
+      </a>
+      <a href="#">
+        <h2>Touring Caravan</h2>
+        <p>Share your pitch with the world</p>
+      </a>
+      <a href="#">
+        <h2>Motorhome</h2>
+        <p>Share your pitch with the world</p>
+      </a>
+      <a href="#">
+        <h2>Treehouses</h2>
+        <p>Share your pitch with the world</p>
+      </a>
     </div>
 
     <section class="campsites contain-y">

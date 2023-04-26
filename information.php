@@ -1,5 +1,23 @@
 <?php
 require "utils.php";
+
+$pitches = [
+  ["name" => "Tent", "image" => "tent.jpg"],
+  ["name" => "Touring Caravan", "image" => "caravan.jpg"],
+  ["name" => "Motorhome", "image" => "motorhome.jpg"],
+];
+
+$features = [
+  ["title" => "Stunning Natural Beauty", "description" => "We offer the perfect opportunity to escape the hustle and bustle of everyday life and connect with nature"],
+  ["title" => "Wide Range of Options", "description" => "We offer a wide range of camping options to suit every style and budget"],
+  ["title" => "Family Friendly", "description" => "We welcome families with open arms and offer a range of activities for children of all ages, including hiking, fishing, and nature walks"],
+  ["title" => "Pet Friendly", "description" => "We offer pet-friendly accommodations and walking trails to make sure that everyone in your family can enjoy the camping experience."],
+  ["title" => "Modern Amenities", "description" => "Our campsites offer modern bathrooms, showers, and laundry facilities to ensure that your comfortable and convenient"],
+  ["title" => "Free Wifi", "description" => "We offer Wi-Fi at our campsites so you can stay connected with loved ones or work remotely if needed."],
+];
+
+$campsites = $connection->query("SELECT * FROM campsites");
+
 ?>
 
 <!DOCTYPE html>
