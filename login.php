@@ -110,26 +110,24 @@ metaHead("Login", "Login to your account");
         <section class="auth contain-y container">
             <div>
                 <form class="login" method="POST">
-                    <fieldset>
-                        <legend>
-                            <h1>Login</h1>
-                        </legend>
-                        <small>Please enter your registered email and password to login.</small>
-                        <label>
-                            <p>Email</p>
-                            <input type="email" name="email" required maxlength="45" title="Enter your registered email address" placeholder="example@gmail.com" autofocus />
-                        </label>
-                        <label>
-                            <p>Password</p>
-                            <input type="password" name="password" required maxlength="20" title="Enter your password to log in." placeholder="Password" />
-                        </label>
-                        <button class="btn btn-primary" type="submit" name="login">Login </button>
-                        <div class="error">
-                            <?php
-                            echo $err_msg;
-                            ?>
-                        </div>
-                    </fieldset>
+                    <legend>
+                        <h1>Login</h1>
+                    </legend>
+                    <small>Please enter your registered email and password to login.</small>
+                    <label>
+                        <p>Email</p>
+                        <input type="email" name="email" required maxlength="45" title="Enter your registered email address" placeholder="example@gmail.com" autofocus />
+                    </label>
+                    <label>
+                        <p>Password</p>
+                        <input type="password" name="password" required maxlength="20" title="Enter your password to log in." placeholder="Password" />
+                    </label>
+                    <button class="btn btn-primary" type="submit" name="login">Login </button>
+                    <div class="error">
+                        <?php
+                        echo $err_msg;
+                        ?>
+                    </div>
                 </form>
                 <p class="to-next-auth">Don't have an account? <a href="register.php">Register</a></p>
 

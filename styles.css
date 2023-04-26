@@ -519,7 +519,8 @@ section.landing picture img {
 .auth label p {
   margin-bottom: 0.3rem;
 }
-.auth input {
+.auth input,
+.auth textarea {
   border-radius: 0.8rem;
   padding: 1rem 1.5rem;
   width: 100%;

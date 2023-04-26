@@ -21,8 +21,8 @@ $nav_items = [
     "explore.php" => "Explore",
     "reviews.php" => "Reviews",
     "information.php" => "Information",
-    "facilities.php" => "Facilities",
-    "contact-us.php" => "Contact Us",
+    "features.php" => "Features",
+    "contact.php" => "Contact",
 ];
 
 $nav_items_guest_actions = [
