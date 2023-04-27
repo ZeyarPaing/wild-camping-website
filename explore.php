@@ -69,7 +69,7 @@ metaHead("Explore", "Explore campsites");
     </div>
 
 
-    <section class="campsites contain-y">
+    <section class="campsites">
       <div class="container">
 
         <h2>Campsites</h2>

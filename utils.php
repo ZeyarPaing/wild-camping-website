@@ -18,9 +18,10 @@ function run_js($js)
 
 $nav_items = [
     "index.php" => "Home",
-    "explore.php" => "Explore",
-    "reviews.php" => "Reviews",
     "information.php" => "Information",
+    "explore.php" => "Explore",
+    "local-attractions.php" => "Local Attractions",
+    "reviews.php" => "Reviews",
     "features.php" => "Features",
     "contact.php" => "Contact",
 ];
@@ -31,7 +32,7 @@ $nav_items_guest_actions = [
 ];
 
 $nav_items_auth_actions = [
-    "profile.php" => "Profile",
+    // "profile.php" => "Profile",
     "logout" => "Logout",
 ];
 

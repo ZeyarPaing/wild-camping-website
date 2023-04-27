@@ -1,14 +1,24 @@
 <?php
 require "utils.php";
 require_once "db_connection.php";
-//fetch pitch data
 $pitches = $connection->query("SELECT * FROM pitch");
-//fetch campsites
 $campsites = $connection->query("SELECT * FROM camping_site cs 
 INNER JOIN pitch p ON p.pitchid = cs.pitchid
 ORDER BY cs.rating DESC
 LIMIT 9;");
 
+$visitors = $connection->query("SELECT visitor_count FROM gwsc_info;");
+$visitor_count = $visitors->fetch_assoc()['visitor_count'];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+  if (isset($_SESSION['counted'])) {
+    echo json_decode($_SESSION['counted']);
+  } else {
+    $visitor_count++;
+    $connection->query("UPDATE gwsc_info SET visitor_count = $visitor_count;");
+    $_SESSION['counted'] = json_encode(true);
+  }
+}
 ?>
 
 <!DOCTYPE html>
@@ -48,7 +58,7 @@ metaHead();
         <img alt="A night view of a tent in the forest and sky full of stars " src="images/website/home-bg-1.jpg" />
         <!-- <img alt="A man Swimming in a lake" src="images/website/home-bg-2.jpg" /> -->
       </picture>
-      <small class="counter"> 14332 people visited </small>
+      <small class="counter"> <?php echo $visitor_count ?> people visited </small>
     </section>
 
     <div class="pitch-container">
@@ -97,6 +107,16 @@ metaHead();
   <?php
   renderFooter();
   ?>
+  <script>
+    // post count
+    fetch('index.php', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: ""
+    });
+  </script>
 </body>
 
 </html>

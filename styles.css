@@ -48,7 +48,7 @@ a {
 }
 
 .contain-y {
-  padding-top: 10rem;
+  padding-top: 13rem;
   padding-bottom: 10rem;
 }
 
@@ -599,6 +599,10 @@ section.landing picture img {
 .auth label p {
   margin-bottom: 0.3rem;
 }
+.auth label label input {
+  display: inline;
+  width: fit-content;
+}
 .auth input,
 .auth textarea {
   border-radius: 0.8rem;
@@ -655,4 +659,23 @@ section.landing picture img {
 .privicy-link a {
   color: var(--accent-color);
   text-decoration: underline;
+}
+
+/* Feature */
+
+.feature {
+  display: grid;
+  gap: 2rem;
+  padding: 4rem 0;
+}
+
+.feature .feature-info {
+  max-width: 60rem;
+}
+.feature img {
+  width: 100%;
+  max-height: 60rem;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 2rem;
 }
