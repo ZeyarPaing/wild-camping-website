@@ -27,6 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 <?php
 metaHead();
 ?>
+<link rel="stylesheet" href="lib/slick.css" />
+<link rel="stylesheet" href="lib/slick-theme.css" />
 
 <body>
   <?php
@@ -34,6 +36,20 @@ metaHead();
   ?>
   <main>
     <section class="landing">
+      <div id="pictures">
+        <picture>
+          <img alt="A night view of a tent in the forest and sky full of stars " src="images/website/home-bg-1.jpg" />
+        </picture>
+        <picture>
+          <img alt="A water in the wild" src="images/website/home-bg-2.jpg" />
+        </picture>
+        <picture>
+          <img alt="A water in the wild" src="images/website/home-bg-3.jpg" />
+        </picture>
+        <picture>
+          <img alt="A night view of a tent in the forest and sky full of stars " src="images/website/home-bg-4.jpg" />
+        </picture>
+      </div>
       <div class="heading-wrapper">
         <div class="container">
           <div role="heading" aria-level="1">
@@ -54,10 +70,7 @@ metaHead();
           </div>
         </div>
       </div>
-      <picture>
-        <img alt="A night view of a tent in the forest and sky full of stars " src="images/website/home-bg-1.jpg" />
-        <!-- <img alt="A man Swimming in a lake" src="images/website/home-bg-2.jpg" /> -->
-      </picture>
+
       <small class="counter"> <?php echo $visitor_count ?> people visited </small>
     </section>
 
@@ -107,7 +120,16 @@ metaHead();
   <?php
   renderFooter();
   ?>
+  <script type="text/javascript" src="lib/jQuery.min.js"></script>
+  <script src="lib/slick.js"></script>
   <script>
+    $(document).ready(function() {
+      $('#pictures').slick({
+        autoplay: true,
+        arrows: false,
+        autoplaySpeed: 5000,
+      });
+    });
     // post count
     fetch('index.php', {
       method: 'POST',

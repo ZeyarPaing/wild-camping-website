@@ -2,6 +2,12 @@
 include_once 'utils.php';
 include_once 'db_connection.php';
 
+if (isset($_SESSION["adminid"]) || isset($_SESSION["userid"])) {
+    echo '<script>alert("You are already logged in.");</script>';
+    header("Location: index.php");
+    exit;
+}
+
 $errormessage = "";
 $username = "";
 $email = "";

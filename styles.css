@@ -120,7 +120,7 @@ header nav .hamburger {
   padding: 3rem 0;
 }
 
-@media screen and (max-width: 950px) {
+@media screen and (max-width: 1100px) {
   .navitems {
     display: none;
   }
@@ -244,20 +244,31 @@ section.landing {
   height: 100dvh;
   font-size: 2rem;
   position: relative;
+  z-index: 4;
+}
+section.landing picture {
+  width: 100%;
+  height: 100vh;
 }
 section.landing picture img {
   width: 100%;
   height: 100%;
-  -o-object-fit: cover;
   object-fit: cover;
 }
 
 .heading-wrapper {
   position: absolute;
+  top: 0;
   width: 100%;
   height: 94%;
   display: flex;
   align-items: center;
+  z-index: 3;
+}
+#pictures {
+  z-index: -1;
+  width: 100%;
+  height: 100dvh;
 }
 .heading-wrapper > div {
   width: 100%;

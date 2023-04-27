@@ -4,10 +4,11 @@ require_once 'db_connection.php';
 require_once "utils.php";
 $err_msg = "";
 
+
 $_SESSION["login_fail_attempt"] = 0;
 
 // Check if the user is already logged in
-if (isset($_SESSION["adminid"]) || isset($_SESSION["customerid"])) {
+if (isset($_SESSION["adminid"]) || isset($_SESSION["userid"])) {
     echo '<script>alert("You are already logged in.");</script>';
     header("Location: index.php");
     exit;
