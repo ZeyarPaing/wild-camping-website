@@ -6,7 +6,8 @@ $pitches = $connection->query("SELECT * FROM pitch");
 //fetch campsites
 $campsites = $connection->query("SELECT * FROM camping_site cs 
 INNER JOIN pitch p ON p.pitchid = cs.pitchid
-LIMIT 6");
+ORDER BY cs.rating DESC
+LIMIT 9;");
 
 ?>
 
@@ -75,7 +76,7 @@ metaHead();
           <?php
           while ($campsite = $campsites->fetch_assoc()) {
             echo "
-            <a href='campsite.php?id=" . $campsite['id'] . "' class='card'>
+            <a target='_blank' href='{$campsite['maplink']}' class='card'>
               <picture>
                 <img src='images/campsites/" . $campsite['campsiteid'] . ".jpg' alt='" . $campsite['sitename'] . "' />
               </picture>

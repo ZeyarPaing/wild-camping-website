@@ -81,7 +81,7 @@ metaHead("Explore", "Explore campsites");
           }
           while ($campsite = $campsites->fetch_assoc()) {
             echo "
-            <a href='campsite.php?id=" . $campsite['id'] . "' class='card'>
+            <a target='_blank' href='{$campsite['maplink']}' class='card'>
               <picture>
                 <img src='images/campsites/" . $campsite['campsiteid'] . ".jpg' alt='" . $campsite['sitename'] . "' />
               </picture>
