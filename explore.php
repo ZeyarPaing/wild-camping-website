@@ -91,6 +91,8 @@ metaHead("Explore", "Explore campsites");
                 <small>" . $campsite['location'] . "</small></br>
                 <small>" . $campsite['price'] . "</small></br>
                 <small> Rating: " . $campsite['rating'] . "</small>
+                </br>
+                <small>" . ($campsite['availability'] == 1 ? "🟢 Available" : "🔴 Unavailable") . "</small>
               </div>
               </a>";
           }

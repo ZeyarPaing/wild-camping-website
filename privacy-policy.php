@@ -6,7 +6,7 @@ require "utils.php";
 <html lang="en">
 
 <?php
-metaHead("Features", "Features");
+metaHead("Privacy Policy", "Privacy policy");
 ?>
 
 <body>

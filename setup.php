@@ -9,8 +9,7 @@ $query = "CREATE DATABASE IF NOT EXISTS gwsc; USE gwsc;";
 // Tables creation
 // Table for site information including visitor count
 $query .= "CREATE TABLE IF NOT EXISTS gwsc_info(
-    visitor_count INT NOT NULL DEFAULT 0,
-    PRIMARY KEY (visitor_count)
+    visitor_count INT NOT NULL PRIMARY KEY DEFAULT 0,
   );";
 
 
@@ -115,9 +114,9 @@ $query .= "INSERT INTO user (username, email, password, dateofbirth, gender, add
 
 //pitch
 $query .= "INSERT INTO pitch ( pitchname, availability, description) VALUES 
-('Tent', 1, 'A tent is a shelter consisting of sheets of fabric or other material draped over, attached to a frame of poles or attached to a supporting rope. While smaller tents may be free-standing or attached to the ground, large tents are usually anchored using guy ropes tied to stakes or tent pegs.'),
-('Caravan', 1, 'A caravan, travel trailer, camper or camper trailer is towed behind a road vehicle to provide a place to sleep which is more comfortable and protected than a tent (although there are fold-down trailer tents). It provides the means for people to have their own home on a journey or a vacation, without relying on a motel or hotel, and enables them to stay in places where none is available.'),
-('Motorhome', 1, 'A motorhome (or motor coach) is a type of self-propelled recreational vehicle (RV) which offers living accommodation combined with a vehicle engine. Motorhomes are part of the much larger associated group of mobile homes which includes caravans, also known as tourers, and static caravans. The overarching mobile leisure terminology encompasses all aspects of the industry from caravan parks, sales dealerships, manufacturers, holiday parks through to the vast supporting services to the sector.'),
+('Tent', 1, 'A tent is a shelter consisting of sheets of fabric or other material draped over, attached to a frame of poles or attached to a supporting rope. '),
+('Caravan', 1, 'A caravan, travel trailer, camper or camper trailer is towed behind a road vehicle to provide a place to sleep which is more comfortable and protected than a tent (although there are fold-down trailer tents).'),
+('Motorhome', 1, 'A motorhome is a type of self-propelled recreational vehicle) which offers living accommodation combined with a vehicle engine.'),
 ('Cabin', 0, 'A cabin or berthing is an enclosed space generally on a ship or an aircraft. A cabin which protrudes above the level of a ships deck may be referred to as a deckhouse.');";
 // feature
 $query .= "INSERT INTO feature ( featurename, description) VALUES 
@@ -130,10 +129,10 @@ $query .= "INSERT INTO feature ( featurename, description) VALUES
 ;";
 //local_attraction
 $query .= "INSERT INTO local_attraction ( localname, location, description) VALUES 
-('Beach', 'Bournemouth', 'Bournemouth is a seaside resort on the southern coast of England. It is part of the ceremonial county of Dorset, 96 miles (154 km) southwest of London and 19 miles (31 km) west of the county town of Dorchester. At the 2011 census, the town had a population of 183,491, making it the largest in Dorset. With Poole to the west and Christchurch in the east, Bournemouth is part of the South East Dorset conurbation, which has a population of 465,000.'),
-('Cinema', 'Poole', 'Poole is a large coastal town and seaport in Dorset, on the south coast of England. The town is 33 kilometres (21 mi) east of Dorchester, and adjoins Bournemouth to the east. Since 1 April 2019 the local authority is Bournemouth, Christchurch and Poole Council which is a unitary authority. Poole had an estimated population of 151,500 (mid-2016 census estimates) making it the second largest town in ceremonial county of Dorset. Together with Bournemouth and Christchurch, the town forms the South East Dorset conurbation with a total population of over 465,000.'),
-('Restaurant', 'Bournemouth', 'Bournemouth is a seaside resort on the southern coast of England. It is part of the ceremonial county of Dorset, 96 miles (154 km) southwest of London and 19 miles (31 km) west of the county town of Dorchester. At the 2011 census, the town had a population of 183,491, making it the largest in Dorset. With Poole to the west and Christchurch in the east, Bournemouth is part of the South East Dorset conurbation, which has a population of 465,000.'),
-('Pub', 'Poole', 'Poole is a large coastal town and seaport in Dorset, on the south coast of England. The town is 33 kilometres (21 mi) east of Dorchester, and adjoins Bournemouth to the east. Since 1 April 2019 the local authority is Bournemouth, Christchurch and Poole Council which is a unitary authority. Poole had an estimated population of 151,500.')
+('Beach', 'Bournemouth', 'Bournemouth is a seaside resort on the southern coast of England. It is part of the ceremonial county of Dorset, 96 miles (154 km) southwest of London and 19 miles (31 km) west of the county town of Dorchester. '),
+('Cinema', 'Poole', 'Poole is a large coastal town and seaport in Dorset, on the south coast of England. The town is 33 kilometres (21 mi) east of Dorchester, and adjoins Bournemouth to the east. '),
+('Restaurant', 'Bournemouth', 'Bournemouth is a seaside resort on the southern coast of England. It is part of the ceremonial county of Dorset, 96 miles (154 km) southwest of London and 19 miles (31 km) west of the county town of Dorchester.'),
+('Pub', 'Poole', 'Poole is a large coastal town and seaport in Dorset, on the south coast of England. The town is 33 kilometres (21 mi) east of Dorchester, and adjoins Bournemouth to the east. ')
 ;";
 
 // // Campsites

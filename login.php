@@ -21,7 +21,7 @@ function isUserLockedOut()
         $lockoutTime = $_SESSION['lockout']['time'];
         $currentTime = time();
         $timeDifference = $currentTime - $lockoutTime;
-        if ($timeDifference < 100) { // 10 minutes
+        if ($timeDifference < 600) { // 10 minutes
             return true;
         } else {
             unset($_SESSION['lockout']);

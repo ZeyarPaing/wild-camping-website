@@ -62,7 +62,7 @@ metaHead("Information", "Information about our services");
           while ($attraction = $attractions->fetch_assoc()) {
             echo "
             <a>
-              <img src='images/campsites/{$attraction['localid']}.jpg' />
+              <img src='images/attractions/{$attraction['localid']}.jpg' />
               <h3>{$attraction['localname']}</h3>
               <small>{$attraction['description']}</small>
             </a>
