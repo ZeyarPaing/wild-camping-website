@@ -389,6 +389,12 @@ section.landing picture img {
   padding-right: 1rem;
 }
 .pitch-type-select select {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  -moz-border-radius: 5rem;
+  -webkit-border-radius: 5rem;
   max-width: 600px;
   margin: 0 auto;
   padding: 1.5rem 2rem;

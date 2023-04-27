@@ -30,7 +30,7 @@ metaHead("Local attractions", "Local attractions");
               <p>{$attraction['description']}</p>
              </div>
             
-              <img src='images/campsites/{$attraction['localid']}.jpg' />
+              <img src='images/attractions/{$attraction['localid']}.jpg' />
               
             </div>
             ";

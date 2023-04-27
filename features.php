@@ -30,7 +30,7 @@ metaHead("Features", "Features and amenities");
                             <p>{$feature['description']}</p>
                         </div>
                         <div>
-                        <img src='images/campsites/{$feature['featureid']}.jpg' alt='feature photo ' />
+                        <img src='images/features/{$feature['featureid']}.jpg' alt='feature photo ' />
                         </div>                       
                     </div>
                     ";
