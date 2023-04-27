@@ -85,8 +85,7 @@ function metaHead($title = "GWSC", $description = "Global Wild Swimming and Camp
   <meta name='description' content='$description' />
   <meta name='viewport' content='width=device-width, initial-scale=1.0' />
   <title>$title</title>
-  <link preload href='https://api.fontshare.com/v2/css?f[]=clash-display@200,400,500,600&display=swap' rel='stylesheet' />
-  <link preload href='https://api.fontshare.com/v2/css?f[]=200,300,400&display=swap' rel='stylesheet' />
+  <link preload href='lib/font/css/clash-display.css' rel='stylesheet' />
   <link preload rel='stylesheet' href='styles.css' />
 ";
 }
